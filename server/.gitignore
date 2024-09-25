@@ -1,0 +1,38 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Build directories
+dist/
+build/
+
+# Coverage files
+coverage/
+
+# Database files (if you're storing local databases)
+*.sqlite
+*.sqlite3
+
+# Ignore specific server-side IDE/

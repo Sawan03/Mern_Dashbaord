@@ -1,0 +1,496 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #fbfbfb;
+  color: #080707;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box; /* Ensures padding and borders are included in the width */
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%; /* Ensure the container doesn't exceed the width */
+  padding-right: 20px; /* Add padding to prevent elements from being cut off */
+}
+
+.navbar .logo {
+  height: 40px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-right .welcome {
+  margin-right: 15px;
+  font-size: 16px;
+}
+
+.navbar-nav .btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  margin-left: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.navbar-nav .btn:hover {
+  background: #0056b3;
+}
+
+.navbar-nav .btn.logout {
+  background: #dc3545;
+}
+
+.navbar-nav .btn.logout:hover {
+  background: #c82333;
+}
+
+.navbar-right .btn {
+  margin-right: 0; /* Ensure there’s no extra margin pushing buttons out */
+}
+
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-direction: column;
+  }
+  .navbar-right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar-nav .btn {
+    margin-top: 10px;
+    width: 100%; /* Ensures buttons take full width on small screens */
+  }
+}
+
+
+
+
+
+/* Sidebar Styles */
+.sidebar {
+  background-color: #f4f4f4;
+  padding: 15px;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 60px; /* Adjust according to navbar height */
+  left: 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-item {
+  display: block;
+  padding: 10px;
+  color: #0a0808;
+  text-decoration: none;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.sidebar-item:hover {
+  background-color: #ddd;
+}
+
+
+
+
+/* Main Content Styles */
+.dashboard-container {
+  display: flex;
+  margin-top: 60px; /* Adjust according to navbar height */
+}
+
+.dashboard-container.full-width {
+  margin-left: 0;
+}
+
+.sidebar + .content {
+  margin-left: 270px; /* Adjust according to sidebar width */
+  padding: 20px;
+  flex: 1;
+}
+
+.content {
+  padding: 20px;
+}
+
+/* Button Styles */
+.btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.error {
+  color: #dc3545;
+  margin-bottom: 10px;
+}
+
+.success {
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dashboard Specific Styles */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.dashboard .navbar {
+  background-color: #ffffff; /* Ensure the navbar background is white */
+}
+
+.dashboard .sidebar {
+  top: 60px; /* Ensure the sidebar aligns correctly below the navbar */
+}
+
+.dashboard .content {
+  margin-left: 270px; /* Ensure content does not overlap the sidebar */
+}
+
+/* Login and Register Form Styles */
+.login-form, .register-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2, .register-form h2 {
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.login-form button, .register-form button {
+  width: 100%;
+  background: #0056b3;
+  color: #ddd;
+ 
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+  }
+
+  .sidebar + .content {
+    margin-left: 0;
+  }
+}
+
+/* Existing styles... */
+
+/* General form styling */
+.create-job-form {
+  max-width: 600px; /* Limits the form width for better readability */
+  margin: 20px auto; /* Centers the form horizontally and adds vertical margin */
+  padding: 20px; /* Adds padding inside the form */
+  border: 1px solid #ddd; /* Light border for the form */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light background color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Style for form groups */
+.create-job-form .form-group {
+  margin-bottom: 15px; /* Space between form fields */
+}
+
+/* Style for form labels */
+.create-job-form .form-group label {
+  display: block; /* Makes labels block elements */
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold; /* Makes labels bold */
+}
+
+/* Style for form inputs and textareas */
+.create-job-form .form-group input,
+.create-job-form .form-group textarea {
+  width: 100%; /* Makes inputs and textareas take full width */
+  padding: 10px; /* Adds padding inside inputs */
+  border: 1px solid #ccc; /* Light border for inputs */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Makes text size readable */
+}
+
+/* Style for textareas specifically */
+.create-job-form .form-group textarea {
+  height: 100px; /* Fixed height for textareas */
+  resize: vertical; /* Allows vertical resizing */
+}
+
+/* Style for the submit button */
+.create-job-form .btn {
+  display: inline-block; /* Aligns the button inline with other elements */
+  padding: 10px 20px; /* Adds padding inside the button */
+  border: none; /* Removes default border */
+  border-radius: 4px; /* Rounded corners for the button */
+  background-color: #0056b3; /* Green background color */
+  color: #fff; /* White text color */
+  font-size: 16px; /* Makes text size readable */
+  cursor: pointer; /* Shows a pointer cursor on hover */
+  text-align: center; /* Centers text inside the button */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Button hover effect */
+.create-job-form .btn:hover {
+  background-color:#0056b3; /* Darker green on hover */
+}
+
+/* Style for error and success messages */
+.create-job-form .error {
+  color: red; /* Red text color for errors */
+  margin-bottom: 10px; /* Space below error messages */
+}
+
+.create-job-form .success {
+  color: #0056b3; /* Green text color for success messages */
+  margin-bottom: 10px; /* Space below success messages */
+}
+
+/* Job Opening Styles */
+.job-opening {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.job-opening:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.job-opening h3 {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.job-opening p {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.job-opening p strong {
+  color: #333;
+}
+
+.job-opening button {
+  background: #3182ce;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.job-opening button:hover {
+  background: #2b6cb0;
+}
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+/* Apply Form Styles */
+.apply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Labels */
+.apply-form label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+/* Form Inputs */
+.apply-form input[type="text"],
+.apply-form input[type="email"],
+.apply-form input[type="tel"],
+.apply-form input[type="file"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* File Input */
+.apply-form input[type="file"] {
+  padding: 0.5rem;
+}
+
+/* Form Buttons */
+.apply-form button[type="submit"],
+.apply-form button[type="button"] {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #fff;
+  background-color: #007bff;
+  transition: background-color 0.3s;
+}
+
+.apply-form button[type="submit"]:hover,
+.apply-form button[type="button"]:hover {
+  background-color: #0056b3;
+}
+
+/* Cancel Button Specific Styling */
+.apply-form button[type="button"] {
+  background-color: #dc3545;
+}
+
+.apply-form button[type="button"]:hover {
+  background-color: #c82333;
+}
+ 
+.text-center{
+  text-align: center;
+  padding-top: 150px;
+}
+
+.welcome-container {
+  display: flex;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: #0056b3;
+  margin-right: 15px; /* Add margin if needed */
+}
+
+.user-icon {
+  color: #0056b3;
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.username-text {
+  font-weight: bold;
+}
